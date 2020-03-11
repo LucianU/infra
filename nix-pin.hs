@@ -18,7 +18,7 @@ main =
 
 createChannelPin :: Text -> IO ()
 createChannelPin channel = do
-  output "nixpkgs-pin.json" $ inproc command args empty
+  output "nixpkgs.json" $ inproc command args empty
   where
     command = "nix-prefetch-git"
     args = ["https://github.com/nixos/nixpkgs-channels.git", "refs/heads/" <> channel]
